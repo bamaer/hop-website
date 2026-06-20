@@ -21,6 +21,11 @@
   --color-asf-moderate-blue: #4f51ae;
   --color-camel-hop: #8e8e8e;
   --color-camel-hop-light: #f39421;
+  /* brand accent (Hop blue) */
+  --color-accent: #0e3a5a;
+  --color-accent-dark: #0a2c45;
+  --color-accent-soft: #eaf1f6;
+  --color-accent-shadow: 14, 58, 90;
   --color-highlight: #0e3a5a;
   --color-glow: #fff7a3;
   --color-wheat: #f5deb3;
@@ -30,7 +35,7 @@
   --body-font-size: 1.0625em; /* 17px */
   --body-font-size--desktop: 1.125em; /* 18px */
   --body-font-size--print: 0.9375em; /* 15px */
-  --body-line-height: 1.15;
+  --body-line-height: 1.4;
   --body-font-color: var(--color-jet-50);
   --body-font-family: "Open Sans", sans-serif;
   --body-font-weight-bold: bold;
@@ -124,7 +129,7 @@
   --quote-font-color: var(--color-gray-70);
   --quote-attribution-font-color: var(--color-gray-30);
   --sidebar-background: var(--color-smoke-70);
-  --table-border-color: var(--color-asf-moderate-blue);
+  --table-border-color: var(--color-accent);
   /* static */
   --static-margin: 0 auto;
   /* frontpage */
@@ -165,4 +170,99 @@
   --z-index-page-version-menu: 3;
   --z-index-navbar: 4;
   --z-index-nav-search: 5;
+}
+
+/* ==========================================================================
+   Dark theme
+   Overrides semantic + surface tokens. Raw text tokens (jet/gray) are
+   remapped to light values; --color-white is left intact (it has legit
+   white-text-on-color uses). Toggled via [data-theme="dark"] on <html>.
+   ========================================================================== */
+
+html[data-theme="dark"] {
+  /* surfaces (smoke scale flips from light grays to dark slates) */
+  --color-smoke-10: #1a2733;
+  --color-smoke-30: #15212c;
+  --color-smoke-50: #15212c;
+  --color-smoke-70: #1f2e3b;
+  --color-smoke-90: #2a3a47;
+
+  /* text tokens (jet/gray flip to light) */
+  --color-jet-20: #d7e0e8;
+  --color-jet-30: #c2cfd9;
+  --color-jet-50: #c2cfd9;
+  --color-jet-70: #aebcc7;
+  --color-jet-80: #d7e0e8;
+  --color-gray-30: #8ba0b0;
+  --color-gray-50: #93a6b5;
+  --color-gray-70: #a7b8c5;
+  --color-asf-dark-blue: #7cc0f0;
+
+  /* brand accent (lighter blue so it reads on dark) */
+  --color-accent: #2b6f9f;
+  --color-accent-dark: #3a86bb;
+  --color-accent-soft: #16222d;
+  --color-highlight: #2b6f9f;
+
+  /* base */
+  --body-background: #0f1a24;
+  --body-font-color: #c2cfd9;
+  --panel-background: #1a2733;
+  --panel-border-color: #2a3a47;
+
+  /* navbar */
+  --navbar-background: #0c151d;
+  --navbar-font-color: #c2cfd9;
+  --navbar-hover-font-color: #fff;
+  --navbar-hover-background: #1a2733;
+  --navbar-button-background: #1a2733;
+  --navbar-menu-background: #0c151d;
+  --navbar-menu-font-color: #c2cfd9;
+  --navbar-menu-hover-background: #1f2e3b;
+
+  /* nav (sidebar) */
+  --nav-background: #0c151d;
+  --nav-border-color: #2a3a47;
+  --nav-heading-font-color: #6db3e8;
+  --nav-muted-color: #c2cfd9;
+  --nav-panel-divider-color: #2a3a47;
+  --nav-secondary-background: #131e28;
+
+  /* toolbar */
+  --toolbar-background: #0c151d;
+  --toolbar-border-color: #2a3a47;
+  --toolbar-font-color: #c2cfd9;
+  --toolbar-muted-color: #8ba0b0;
+  --page-version-menu-background: #1f2e3b;
+
+  /* toc */
+  --toc-font-color: #8ba0b0;
+  --toc-heading-font-color: #c2cfd9;
+  --toc-border-color: #2a3a47;
+
+  /* doc */
+  --doc-font-color: #c2cfd9;
+  --heading-font-color: #7cc0f0;
+  --link-font-color: #6db3e8;
+  --link_hover-font-color: #9bd0f5;
+  --section-divider-color: #2a3a47;
+  --abstract-background: #1a2733;
+  --abstract-font-color: #c2cfd9;
+  --abstract-border-color: #2a3a47;
+  --admonition-background: #1a2733;
+  --code-background: #0b131b;
+  --code-font-color: #7cc0f0;
+  --pre-background: #0b131b;
+  --pre-border-color: #2a3a47;
+  --example-background: #1a2733;
+  --example-border-color: #2a3a47;
+  --quote-background: #1a2733;
+  --kbd-background: #1a2733;
+  --sidebar-background: #131e28;
+
+  /* footer */
+  --footer-background: #0c151d;
+  --footer-font-color: #8ba0b0;
+  --footer-link-font-color: #c2cfd9;
+  --footer-after-background: #2a3a47;
 }

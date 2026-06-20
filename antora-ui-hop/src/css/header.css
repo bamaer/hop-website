@@ -307,18 +307,26 @@ body {
 }
 
 .navbar .search {
+  display: flex;
+  align-items: center;
   order: 4;
 }
 
 .navbar-tools {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   /*  flex-grow: 1; */
   justify-content: flex-end;
   line-height: 1.6;
   padding: 0.5rem;
   font-weight: bold;
   order: 5;
+}
+
+.navbar-tools a {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
 }
 
 .navbar-tools .brand-icon {
@@ -328,9 +336,33 @@ body {
   fill: var(--navbar-font-color);
 }
 
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  color: var(--navbar-font-color);
+  cursor: pointer;
+  line-height: 0;
+}
+
+.theme-toggle:hover {
+  color: var(--navbar-hover-font-color);
+}
+
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle .icon-sun {
+  display: inline-block;
+}
+
 @media screen and (max-width: 1023px) {
   .navbar-tools {
-    align-items: end;
+    align-items: center;
     padding: 0.5rem 0;
   }
 
@@ -511,9 +543,9 @@ div.footer-search h4 {
 
   .navbar-tools {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: flex-end;
-    padding: 0.3 0.5rem;
+    padding: 0.3rem 0.5rem;
     order: 5;
   }
 

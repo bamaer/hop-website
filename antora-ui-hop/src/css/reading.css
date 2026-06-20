@@ -1,0 +1,80 @@
+/*
+ * reading.css — Medium-style reading experience for long-form content.
+ *
+ * Scoped strictly to documentation pages (.doc, rendered from hop-user-manual,
+ * hop-dev-manual, hop-tech-manual) and the blog (.blog). Layered last in
+ * site.css so it refines doc.css / blog.css without touching the shared design
+ * tokens that drive the frontpage, header and navigation.
+ *
+ * Goals (consistent with the rest of the Apache Hop site — no new typeface):
+ *   - larger, airier body text with generous paragraph rhythm;
+ *   - tighter, calmer heading hierarchy.
+ *
+ * Prose keeps the full content width (matching the options tables); only the
+ * typographic rhythm is refined here.
+ */
+
+:root {
+  /* Vertical rhythm between prose blocks. */
+  --reading-block-gap: 1.6rem;
+  --reading-line-height: 1.75;
+}
+
+/* ------------------------------------------------------------------ *
+ * Documentation pages
+ * ------------------------------------------------------------------ */
+
+@media screen and (min-width: 1024px) {
+  /* Slightly larger reading size than the dense default. */
+  .doc {
+    font-size: calc(19 / var(--rem-base) * 1rem);
+  }
+}
+
+/* Roomier line height and paragraph rhythm across all widths. */
+.doc p {
+  line-height: var(--reading-line-height);
+}
+
+.doc .paragraph,
+.doc .olist,
+.doc .ulist,
+.doc .dlist {
+  margin-top: var(--reading-block-gap);
+}
+
+.doc .olist li,
+.doc .ulist li {
+  margin-bottom: 0.6rem;
+}
+
+/* Calmer heading hierarchy: more space above, snug to the text that follows. */
+.doc h2:not(.discrete) {
+  margin-top: 3rem;
+}
+
+.doc h3:not(.discrete),
+.doc h4:not(.discrete) {
+  margin-top: 2.25rem;
+}
+
+/* ------------------------------------------------------------------ *
+ * Blog
+ * ------------------------------------------------------------------ */
+
+.blog .post-content p,
+.blog article.blog p {
+  line-height: var(--reading-line-height);
+}
+
+@media screen and (min-width: 1024px) {
+  .blog .post-content {
+    font-size: calc(19 / var(--rem-base) * 1rem);
+  }
+}
+
+/* A touch more breathing room between blog paragraphs. */
+.blog .post-content p,
+.blog article.blog p {
+  padding-bottom: var(--reading-block-gap);
+}

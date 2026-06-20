@@ -51,7 +51,9 @@ module.exports = (src, dest, preview) => () => {
         },
       },
     ]),
-    postcssVar({ preserve: preview }),
+    // preserve custom properties in all builds so runtime theming (data-theme="dark") works;
+    // without this the production bundle inlines var() to :root literals and dark mode has no effect
+    postcssVar({ preserve: true }),
     preview ? postcssCalc : () => {},
     autoprefixer,
     preview

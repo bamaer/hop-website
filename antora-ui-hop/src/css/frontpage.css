@@ -6,7 +6,7 @@ section.frontpage h2 {
   color: var(--heading-font-color);
   line-height: 1.3;
   margin: 1rem 0 0;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
   word-wrap: break-word;
 }
 
@@ -21,14 +21,13 @@ section.frontpage {
 section.frontpage a {
   color: var(--link-font-color);
   text-decoration: none;
-  background-image: linear-gradient(to right, #583ac2 50%, transparent 50%);
-  background-position: 0 1.1em;
-  background-repeat: repeat-x;
-  background-size: 7px 1px;
+  transition: color 0.15s ease;
 }
 
 section.frontpage a:hover {
   color: var(--link_hover-font-color);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 section.frontpage h1 {
@@ -47,57 +46,107 @@ section.frontpage h2 {
 header.frontpage {
   display: flex;
   flex-direction: row;
-  margin: 2rem 3rem 2.5rem;
-}
-
-header.frontpage img {
-  width: 45vw;
-  max-height: 50vh;
+  align-items: center;
+  gap: 3rem;
+  margin: 0 auto;
+  padding: 3.5rem 3rem 3rem;
+  max-width: var(--frontpage-max-width);
+  background-image: radial-gradient(ellipse at top right, var(--color-accent-soft), transparent 55%);
 }
 
 header.frontpage .main-heading {
-  width: 50vw;
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
-  margin-left: 2rem;
+  width: auto;
+  margin: 0;
+}
+
+header.frontpage .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+  margin: 0 0 0.75rem;
 }
 
 header.frontpage h1 {
-  font-size: 5vw;
+  font-size: clamp(2.5rem, 4.5vw, 3.75rem);
   color: var(--color-asf-dark-blue);
-  margin-bottom: 0.5rem;
+  margin: 0 0 1rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
-header.frontpage p {
+header.frontpage .subhead {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
-  line-height: 1.7rem;
+  line-height: 1.6;
+  color: var(--color-jet-30);
+  margin: 0 0 2rem;
+  max-width: 34rem;
 }
 
-.frontpage a.button-dark,
-.frontpage a.button-dark:hover {
+header.frontpage .cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+header.frontpage .hero-visual {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+header.frontpage .hero-visual img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  border-radius: 12px;
+  border: 1px solid var(--color-smoke-90);
+  box-shadow: 0 24px 60px rgba(14, 58, 90, 18%);
+}
+
+.frontpage a.button-dark {
   white-space: nowrap;
-  padding: 0.7rem 1rem;
-  background-color: var(--color-camel-hop);
+  padding: 0.8rem 1.6rem;
+  background-color: var(--color-accent);
   background-image: none;
-  background-repeat: no-repeat;
-  background-position: 0;
   color: white;
   font-weight: bold;
   margin-right: 0.5rem;
   border-radius: 3rem;
   outline: none;
   display: inline-block;
-  box-shadow: 0 4px #b8b8b8;
+  box-shadow: 0 6px 16px rgba(var(--color-accent-shadow), 28%);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.frontpage a.button-dark:hover {
+  background-color: var(--color-accent-dark);
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(var(--color-accent-shadow), 38%);
 }
 
 .frontpage a.button-light {
-  padding: 0.7rem 1rem;
+  padding: 0.8rem 1.6rem;
   border: 1px solid var(--color-gray-70);
   color: var(--color-gray-70);
   font-weight: bold;
   border-radius: 3rem;
   white-space: nowrap;
+  display: inline-block;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.frontpage a.button-light:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent-dark);
+  background-color: var(--color-accent-soft);
+  text-decoration: none;
 }
 
 /* css for blog section */
@@ -187,52 +236,106 @@ li.blog-post time.date .month {
 
 /* common css for columns section */
 
-section.frontpage.columns.functionalities p,
 section.frontpage.projects .project .content p {
   margin-bottom: 1.5rem;
 }
 
 section.frontpage.projects,
-section.frontpage.apache,
-section.frontpage.functionalities {
+section.frontpage.apache {
   display: flex;
   flex-wrap: wrap;
   border-top: 1px solid var(--color-smoke-50);
   padding: 2rem 1rem 1rem 1rem;
 }
 
-section.frontpage.columns.functionalities {
-  border: none;
-}
-
-section.frontpage.columns.functionalities h2,
 section.frontpage.projects .project .content h2,
 section.frontpage.projects .project .content p {
   text-align: left;
   text-transform: none;
 }
 
-/* css for functionalities section */
+/* css for "runs anywhere" strip */
 
-section.frontpage.columns.functionalities .box {
-  width: 70%;
-  display: flex;
-  margin: 2vw auto;
-}
-
-section.frontpage.columns.functionalities .box .content {
-  width: 55vw;
-  margin: 0 1vw;
-}
-
-section.frontpage.columns.functionalities .box .icon {
-  width: 30vw;
+section.frontpage.runs-on {
   text-align: center;
+  padding: 2.5rem 3rem 3rem;
+  border-top: 1px solid var(--color-smoke-70);
 }
 
-section.frontpage.columns.functionalities img {
-  height: 12rem;
-  margin: 0 1vw;
+section.frontpage.runs-on h2 {
+  margin-bottom: 1.5rem;
+}
+
+.runtime-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.runtime-list li {
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--color-smoke-90);
+  border-radius: 2rem;
+  font-weight: 600;
+  color: var(--color-asf-dark-blue);
+  background: var(--color-smoke-30);
+}
+
+.runs-on-note {
+  color: var(--color-gray-50);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* css for feature cards */
+
+section.frontpage.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 1rem 3rem 3.5rem;
+}
+
+section.frontpage.feature-cards .card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-smoke-10);
+  border: 1px solid var(--color-smoke-90);
+  border-radius: 14px;
+  padding: 1.75rem 1.5rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+section.frontpage.feature-cards .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(14, 58, 90, 12%);
+  border-color: var(--color-accent);
+}
+
+section.frontpage.feature-cards .card img {
+  height: 3.5rem;
+  width: auto;
+  margin: 0 0 1.1rem;
+  align-self: flex-start;
+}
+
+section.frontpage.feature-cards .card h3 {
+  color: var(--color-asf-dark-blue);
+  font-size: 1.25rem;
+  font-weight: var(--heading-font-weight);
+  line-height: 1.25;
+  margin: 0 0 0.6rem;
+}
+
+section.frontpage.feature-cards .card p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--color-jet-30);
 }
 
 /* css for projects section */
@@ -273,11 +376,6 @@ section.frontpage.projects .project img {
 /* css for tablet view */
 
 @media screen and (max-width: 1023px) {
-  header.frontpage h1 {
-    font-size: 3rem;
-    text-align: center;
-  }
-
   section.frontpage h1 {
     font-size: 2.5rem;
   }
@@ -292,8 +390,6 @@ section.frontpage.projects .project img {
     margin: auto;
   }
 
-  header.frontpage .main-heading,
-  section.frontpage.columns.functionalities,
   section.frontpage.columns.projects,
   section.frontpage.apache,
   section.frontpage.blog-posts .blog-post {
@@ -310,35 +406,36 @@ section.frontpage.projects .project img {
     min-width: 25%;
   }
 
-  section.frontpage.projects .project,
-  section.frontpage.columns.functionalities .box {
+  section.frontpage.projects .project {
     width: 100%;
   }
 
-  section.frontpage.functionalities .icon img,
   section.frontpage.projects .icon img {
     max-width: 25vw;
     margin: 2vw;
   }
 
-  section.frontpage.functionalities .content {
-    width: 70vw;
-  }
-
-  header.frontpage p {
-    font-size: inherit;
-    text-align: center;
+  section.frontpage.feature-cards {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 1.5rem 2.5rem;
   }
 
   header.frontpage {
-    flex-direction: column-reverse;
-    margin: 0;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    text-align: center;
   }
 
-  header.frontpage img {
-    width: 60%;
-    max-height: 45vh;
-    margin: 0 auto;
+  header.frontpage .subhead {
+    max-width: none;
+  }
+
+  header.frontpage .cta {
+    justify-content: center;
+  }
+
+  header.frontpage .hero-visual {
+    width: 100%;
   }
 
   div.frontpage.news {
@@ -356,8 +453,6 @@ section.frontpage.projects .project img {
 /* css for mobile view */
 
 @media screen and (max-width: 626px) {
-  header.frontpage .main-heading,
-  section.frontpage.columns.functionalities,
   section.frontpage.columns.blog-posts,
   section.frontpage.projects,
   section.frontpage.apache {
@@ -366,52 +461,30 @@ section.frontpage.projects .project img {
     padding: 1rem;
   }
 
-  header.frontpage a.button-light {
-    line-height: 5rem;
+  section.frontpage.feature-cards {
+    grid-template-columns: 1fr;
   }
 
-  section.frontpage.projects .project,
-  section.frontpage.columns.functionalities .box.left {
+  section.frontpage.projects .project {
     flex-direction: column;
-    margin: 0;
-    padding: 0;
-  }
-
-  section.frontpage.columns.functionalities .box.right {
-    flex-direction: column-reverse;
     margin: 0;
     padding: 0;
   }
 
   section.frontpage.projects .project .content h2,
   section.frontpage.projects .project .icon,
-  section.frontpage.columns.functionalities .box .content h2,
-  section.frontpage.columns.functionalities .box .content,
-  section.frontpage.columns.functionalities .box .icon,
-  section.frontpage.columns.functionalities p,
   section.frontpage.projects .project .content p {
     text-align: center;
     margin: 0;
     width: 100%;
   }
 
-  section.frontpage.columns.functionalities .box .content p,
   section.frontpage.projects .project .content p {
     margin: 1rem 0 1.5rem;
   }
 
-  section.frontpage.columns.functionalities .box .icon img {
-    max-width: 50%;
-    height: auto;
-    margin-top: 2rem;
-  }
-
   section.frontpage h1 {
     font-size: 2rem;
-  }
-
-  header.frontpage h1 {
-    font-size: 2.5rem;
   }
 
   .split.demo {

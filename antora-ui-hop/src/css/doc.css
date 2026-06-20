@@ -26,9 +26,22 @@
   color: var(--heading-font-color);
   font-weight: var(--heading-font-weight);
   hyphens: none;
-  line-height: 1.3;
-  margin: 1rem 0 0;
-  text-transform: uppercase;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 2.25rem 0 0;
+}
+
+.doc h3:not(.discrete),
+.doc h4:not(.discrete) {
+  margin-top: 1.75rem;
+}
+
+.doc h3 {
+  font-size: calc(22 / var(--rem-base) * 1rem);
+}
+
+.doc h4 {
+  font-size: calc(19 / var(--rem-base) * 1rem);
 }
 
 .static > h1:first-child,
@@ -50,10 +63,11 @@
 }
 
 .doc h2:not(.discrete) {
-  margin-top: 1rem;
+  font-size: calc(28 / var(--rem-base) * 1rem);
+  margin-top: 2.5rem;
   margin-left: -1rem;
   margin-right: -1rem;
-  padding: 0.4rem 1rem 0.1rem;
+  padding: 0 1rem 0.5rem;
   overflow-wrap: break-word;
 }
 
@@ -61,7 +75,9 @@
   content: "";
   display: block;
   position: relative;
-  height: 1px;
+  margin-top: 0.5rem;
+  height: 2px;
+  border-radius: 2px;
   background-color: var(--section-divider-color);
 }
 
@@ -150,18 +166,7 @@
   color: var(--link-font-color);
   word-break: break-word;
   text-decoration: none;
-  background-image: linear-gradient(to right, #583ac2 50%, transparent 50%);
-  background-position: 0 1.1em;
-  background-repeat: repeat-x;
-  background-size: 7px 1px;
-}
-
-.doc li a,
-.doc table a,
-.doc .section .links a,
-.doc .camel-project .links a,
-.doc .sect2 h3 a {
-  background: none;
+  transition: color 0.15s ease;
 }
 
 .doc table.tableblock td a {
@@ -170,6 +175,8 @@
 
 .doc a:hover {
   color: var(--link_hover-font-color);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .doc a.unresolved {
@@ -184,9 +191,10 @@
 .doc thead code {
   color: var(--code-font-color);
   background: var(--code-background);
-  border-radius: 0.2rem;
+  border: 1px solid var(--pre-border-color);
+  border-radius: 0.25rem;
   font-size: calc(14 / var(--rem-base) * 1rem);
-  padding: 0.075rem 0.25rem 0.125rem;
+  padding: 0.075rem 0.3rem 0.125rem;
   overflow-wrap: break-word;
 }
 
@@ -246,15 +254,21 @@
 }
 
 .doc table.tableblock thead th {
-  border-bottom: 2.5px solid var(--table-border-color);
-  padding: 0.5rem;
+  border-bottom: 2px solid var(--table-border-color);
+  background: var(--color-smoke-50);
+  text-align: left;
+  padding: 0.6rem 0.75rem;
 }
 
 .doc table.tableblock td,
 .doc table.tableblock > :not(thead) th {
-  border-top: 1px solid var(--table-border-color);
-  border-bottom: 1px solid var(--table-border-color);
-  padding: 0.5rem;
+  border-top: 1px solid var(--color-smoke-90);
+  border-bottom: 1px solid var(--color-smoke-90);
+  padding: 0.6rem 0.75rem;
+}
+
+.doc table.tableblock tbody tr:nth-child(even) {
+  background: var(--color-smoke-30);
 }
 
 .doc .halign-left {
@@ -283,7 +297,9 @@
 
 .doc .admonitionblock {
   margin: 1.4rem 0 0;
-  box-shadow: inset 0 0 1.75px var(--abstract-border-color);
+  border: 1px solid var(--abstract-border-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 
 .doc .admonitionblock p,
@@ -566,10 +582,11 @@
 .doc pre:not(.highlight),
 .doc pre.highlight code {
   background: var(--pre-background);
-  box-shadow: inset 0 0 1.75px var(--pre-border-color);
+  border: 1px solid var(--pre-border-color);
+  border-radius: 0.5rem;
   display: block;
   overflow-x: auto;
-  padding: 0.75rem;
+  padding: 1rem 1.1rem;
 }
 
 .doc pre.highlight code::-webkit-scrollbar {

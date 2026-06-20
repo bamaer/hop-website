@@ -3,102 +3,65 @@ title: Apache Hop
 description: Apache Hop - The Hop Orchestration Platform aims to facilitate all aspects of data and metadata orchestration.
 ---
 
-{{< section "frontpage columns apache demo" >}}
+{{< section "frontpage runs-on" >}}
 
-# Apache Hop
+## Design once, run anywhere
+
+<ul class="runtime-list">
+<li>Native Hop engine</li>
+<li>Apache Spark</li>
+<li>Apache Flink</li>
+<li>Google Dataflow</li>
+<li>AWS EMR</li>
+</ul>
+
+<p class="runs-on-note">Portable pipelines, powered by Apache Beam.</p>
 
 {{< /section >}}
 
 
 
-{{< section "frontpage columns functionalities" >}}
+{{< section "frontpage feature-cards" >}}
 
-{{< div "box right" >}}
+{{< div "card" >}}
 
-{{< div "content" >}}
+<img src="./img/GenericTransform.svg" alt=""/>
 
-## Metadata Driven
+### Metadata Driven
 
-Hop is entirely metadata driven. Every object type in Hop describes how data is read, manipulated or written, or how workflows and pipelines need to be orchestrated.</br>
-Metadata is what drives Hop internally as well. Hop uses a kernel architecture with a robust engine. Plugins add functionality to the engine through their own metadata.
-
-<!--p><a class="button-dark" href="/link/to/doc/page/on/metadata">Read more on Hop Metadata</a></p-->
+Every object in Hop describes how data is read, manipulated, written and orchestrated. A robust kernel engine and its plugins are all driven by that metadata.
 
 {{< /div >}}
 
-{{< div "icon" >}}
+{{< div "card" >}}
 
-<img src="./img/GenericTransform.svg" alt="Driven By Metadata"/>
+<img src="./img/beam-logo.svg" alt=""/>
 
-{{< /div >}}
+### Design Once, Run Anywhere
 
-{{< /div >}}
-
-
-{{< div "box left" >}}
-
-{{< div "icon" >}}
-
-<img src="./img/beam-logo.svg" alt="Driven By Metadata"/>
+Design a pipeline once and run it on the native Hop engine &mdash; local or remote &mdash; or on Apache Spark, Apache Flink or Google Dataflow through Apache Beam.
 
 {{< /div >}}
 
-{{< div "content" >}}
+{{< div "card" >}}
 
-## Design Once, Run Anywhere
+<img src="./img/eyeglasses.svg" alt=""/>
 
-Hop workflows and pipelines are definitions of how data needs to be processed. </br>Once designed, a pipeline can be executed on any supported runtime.
-Hop has built-in support to run pipelines locally and remotely in the native Hop runtime, or on <a href="https://spark.apache.org" target="blank">Apache Spark</a>, <a href="https://flink.apache.org" target="blank">Apache Flink</a> or <a href="https://cloud.google.com/dataflow" target="blank">Google Dataflow</a> through the <a href="https://beam.apache.org" target="blank">Apache Beam</a> runtimes.
+### Visual Development
 
-<!--p><a class="button-dark" href="/components/latest/eips/enterprise-integration-patterns.html">Read more on runtimes</a></p-->
-
-{{< /div >}}
+Build workflows and pipelines visually with an intuitive drag and drop interface. Stay focused on the business logic &mdash; on _what_ to do, not _how_.
 
 {{< /div >}}
 
-{{< div "box right" >}}
+{{< div "card" >}}
 
-{{< div "content" >}}
+<img src="./img/cycle.svg" alt=""/>
 
-## Visual Development
+### Life Cycle Management
 
-Hop workflows and pipelines are developed visually through an intuitive drag and drop interface. </br>
-Visual development allows data developers and data engineers to keep focus on the business logic that needs to be implemented, on <i>what</i> needs to be done instead of <i>how</i> it needs to be done.
-
-<!--p><a class="button-dark" href="/components/latest/eips/enterprise-integration-patterns.html">Read more on Hop Gui</a></p-->
+Manage the entire project life cycle from the Hop GUI: switch between projects, environments and runtime configurations, and manage git versions.
 
 {{< /div >}}
-
-{{< div "icon" >}}
-
-<img src="./img/eyeglasses.svg" alt="Driven By Metadata"/>
-
-{{< /div >}}
-
-{{< /div >}}
-
-
-{{< div "box left" >}}
-
-{{< div "icon" >}}
-
-<img src="./img/cycle.svg" alt="Driven By Metadata"/>
-
-{{< /div >}}
-
-{{< div "content" >}}
-
-## Built-in Life Cycle Management
-
-Managing, testing and deploying workflows and pipelines can be a daunting task.</br>
-Developers and engineers can manage the entire project life cycle from the Hop Gui: switch between projects, environments, runtime configurations, manage git versions etc.
-
-<!--p><a class="button-dark" href="/components/latest/eips/enterprise-integration-patterns.html">Read more on LCM</a></p-->
-
-{{< /div >}}
-
-{{< /div >}}
-
 
 {{< /section >}}
 
